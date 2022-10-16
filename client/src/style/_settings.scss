@@ -1,0 +1,28 @@
+@font-face {
+    font-family: btp;
+    src: url('../font/FiraSans-Regular.ttf');
+}
+
+
+$font-1: btp,'Times New Roman', Times, serif;
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: $font-1;
+    color: #101010;
+    min-height: 100vh;
+}
+
+input {
+    cursor: text;
+}
+
+button {
+    cursor: pointer;
+}
