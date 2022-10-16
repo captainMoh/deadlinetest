@@ -151,7 +151,7 @@ const Home = () => {
                     <div className='right-side'>
                         <div className='photo'>
                             <div className='outer-photo'>
-                                <h1>Accélérez votre chantier, gérer mieux</h1>
+                                <h1>Pour mieux gérer votre chantier</h1>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@ const Home = () => {
                         </div>
 
                         <div className='adresse'>
-                            <h3>Code Postale:</h3>
+                            <h3>Code Postal:</h3>
                             <input className={borderBlack} type='text' pattern='[^<>]+' value={cp} onChange={e => setCp(e.target.value)} disabled={disabled} />
                             <button className='icone-modifier' onClick={activeModif}><FontAwesomeIcon icon={faPen} /></button>
                         </div>

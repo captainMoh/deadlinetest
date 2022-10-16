@@ -85,7 +85,7 @@ const SignUp = () => {
                 <div className={`chargement ${load}`}><img src={loader} alt='loader' /></div>
                 <a className='house' href='/'><FontAwesomeIcon icon={faHome} /></a>
                 <h1>Créer un compte</h1>
-                <h6>* Tout les champs sont obligatoires</h6>
+                <h6>* Tous les champs sont obligatoires</h6>
                 <form onSubmit={inscription} className='formulaire'>
                     
                     <input id='Nom' name='Nom' type='text' pattern='[^<>]+' placeholder='Nom' value={nom} onChange={e => setNom(e.target.value)} required/>
@@ -94,7 +94,7 @@ const SignUp = () => {
 
                     <input id='Adresse' name='Adresse' type='text' pattern='[^<>]+' placeholder='Adresse' value={adresse} onChange={e => setAdresse(e.target.value)} required/>
 
-                    <input id='cp' name='cp' type='text' pattern='[^<>]+' placeholder='Code Postale' value={cp} onChange={e => setCp(e.target.value)}  required/>
+                    <input id='cp' name='cp' type='text' pattern='[^<>]+' placeholder='Code Postal' value={cp} onChange={e => setCp(e.target.value)}  required/>
 
                     <input id='ville' name='ville' type='text' pattern='[^<>]+' placeholder='Ville' value={ville} onChange={e => setVille(e.target.value)}  required/>
 

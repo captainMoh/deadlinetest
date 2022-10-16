@@ -11,7 +11,7 @@ const Connecte = () => {
     return (
         <div className='connecte'>
             <div>
-                <h1>Bienvenue parmis nous, vous êtes inscrit <FontAwesomeIcon className='icon' icon={faCheckCircle} /></h1>
+                <h1>Bienvenue parmi nous, vous êtes inscrit <FontAwesomeIcon className='icon' icon={faCheckCircle} /></h1>
                 <button onClick={() => navigate('../', { replace: true })}>Connectez-vous maintenant</button>
             </div>
         </div>

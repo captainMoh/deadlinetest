@@ -1,6 +1,31 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
 const { User } = require('../model/user');
+
+const mail = async (user) => {
+
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASSWORD
+        }
+    })
+
+    let info = await transporter.sendMail({
+        from: 'aichoun026@gmail.com',
+        to: `aichoun026@gmail.com, ${user.Email}`,
+        subject: "Création de compte sur Deadline BTP",
+        text: 
+        `
+        Félicitations ${user.Prenom}, vous venez de finaliser l'inscription chez Deadline BTP.
+        Je vous souhaite la bienvenue, cliquez sur le lien ci-dessous pour vous connecter:
+        https://deadlinetest.herokuapp.com/
+        `
+        
+    });
+}
 
 exports.signUp = (req, res) => {
     bcrypt.hash(req.body.mdp, 10)
@@ -17,7 +42,9 @@ exports.signUp = (req, res) => {
                 Telephone: req.body.telephone
             })
             user.save()
-                .then(() => res.status(201).send({message: 'Utilisateur créer'}))
+                .then(() => {
+                    res.status(201).send({message: 'Utilisateur créer'})
+                })
                 .catch(error => res.status(400).send(`Ce pseudo ou cet email est déja existant`))
         })
         .catch(error => res.status(400).send(`Une erreur hash est survenue ${error}`))
