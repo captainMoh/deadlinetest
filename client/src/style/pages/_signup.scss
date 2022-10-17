@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     width: 100vw;
     min-height: 100vh;
     color: #f1f1f1;
@@ -77,6 +77,7 @@
 
         @media(max-width: 1000px) {
             width: 100%;
+            min-width: 0px;
         }
 
         .house {
@@ -88,6 +89,10 @@
             left: 0;
             font-size: 35px;
             padding: 20px;
+
+            @media(max-width: 370px) {
+                padding: 0px;
+            }
         }
 
         h1 {
